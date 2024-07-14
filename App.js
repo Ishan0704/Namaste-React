@@ -1,18 +1,66 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const heading= React.createElement("h1",{id:123},"Hii there"); // react element
+const Header = ()=>{
+    return (
+        <div className='header'>
+            <div className='header__logo'>
+                <img src="" alt='company-logo'></img>
+            </div>
+            <div className='nav-items-container'>
+                <ol className='nav-items'>
+                    <li className='items'>Home</li>
+                    <li className='items'>About</li>
+                    <li className='items'>cart</li>
+                </ol>
+            </div>
+        </div>
+    )
+}
 
-const JsxHeading1 = () => (
-    <div>
-        <h1>This is jsx trial</h1>
-        <JsxHeading2/>
-    </div>
-); // functional component
+const Card = () => {
+    return(
+        <div className='card'>
+            <div className="card__image">
+                <img src="" alt="cardImage" />
+            </div>
+            <div className='card__title'>Dominos</div>
+            <div className="card__description">We deliver best pizza</div>
+            <div className="card__deatils">
+                <div className='card__common card__ratings'>4.5</div>
+                <div className="card__common card__time">30-40 Minutes</div>
+            </div>  
+            
 
-const JsxHeading2 = () => (
-    <h2>This is another text</h2>
-); // functional component
+        </div>
+    )
+}
+
+const Body = () =>{
+    return (
+        <div className='body'>
+            <div className="search">Search</div>
+            <div className="card__container">
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+            </div>
+        </div>
+    )
+}
+
+const App = () =>{
+    return(
+        <div>
+            <Header/>
+            <Body/>
+            {/* <Footer/> */}
+        </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<JsxHeading1/>);
+root.render(<App/>);
