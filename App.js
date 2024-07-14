@@ -18,17 +18,17 @@ const Header = ()=>{
     )
 }
 
-const Card = () => {
+const Card = (props) => {
     return(
         <div className='card'>
             <div className="card__image">
                 <img src="" alt="cardImage" />
             </div>
-            <div className='card__title'>Dominos</div>
-            <div className="card__description">We deliver best pizza</div>
+            <div className='card__title'>{props.title}</div>
+            <div className="card__description">{props.descrption}</div>
             <div className="card__deatils">
-                <div className='card__common card__ratings'>4.5</div>
-                <div className="card__common card__time">30-40 Minutes</div>
+                <div className='card__common card__ratings'>{props.ratings}</div>
+                <div className="card__common card__time">{props.time} Minutes</div>
             </div>  
             
 
@@ -41,12 +41,9 @@ const Body = () =>{
         <div className='body'>
             <div className="search">Search</div>
             <div className="card__container">
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                <Card title="Dominos" descrption="We deliver best pizza" ratings='4.5' time='30-40'/>
+                <Card title="KFC" descrption="Chicked Basket" ratings='4.7' time='20-30'/>
+                <Card title="Pizza Hut" descrption="Best Pan Pizzas" ratings='4.2' time='30-40'/>
             </div>
         </div>
     )
