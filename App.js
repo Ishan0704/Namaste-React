@@ -20,15 +20,15 @@ const Header = ()=>{
 
 const Card = (props) => {
 
-    const {name, rating, cunnines, Avgtime} = props;
-    
+    const {name, rating, cuisine, Avgtime} = props;
+
     return(
         <div className='card'>
             <div className="card__image">
                 <img src="" alt="cardImage" />
             </div>
             <div className='card__title'>{name}</div>
-            <div className="card__description">{cunnines}</div>
+            <div className="card__description">{cuisine}</div>
             <div className="card__deatils">
                 <div className='card__common card__ratings'>{rating}</div>
                 <div className="card__common card__time">{Avgtime} Minutes</div>
@@ -37,14 +37,36 @@ const Card = (props) => {
     )
 }
 
+const restaurantObj = [
+    {
+        name:"Dominos" ,
+        cuisine:"We deliver best pizza",
+        rating:'4.5',
+        Avgtime:'30-40',
+    },
+    {
+        name:"KFC" ,
+        cuisine:"Chicked Basket" ,
+        rating:'4.7',
+        Avgtime:'20-30',
+    },
+    {
+        name:"Pizza Hut",
+        cuisine:"Best Pan Pizzas",
+        rating:'4.2', 
+        Avgtime:'30-40',
+    }
+]
 const Body = () =>{
     return (
         <div className='body'>
             <div className="search">Search</div>
             <div className="card__container">
-                <Card name="Dominos" cunnines="We deliver best pizza" rating='4.5' Avgtime='30-40'/>
-                <Card name="KFC" cunnines="Chicked Basket" rating='4.7' Avgtime='20-30'/>
-                <Card name="Pizza Hut" cunnines="Best Pan Pizzas" rating='4.2' Avgtime='30-40'/>
+                <>
+                    <Card {...restaurantObj[0]}/>
+                    <Card {...restaurantObj[1]}/>
+                    <Card {...restaurantObj[2]}/>
+                </>
             </div>
         </div>
     )
