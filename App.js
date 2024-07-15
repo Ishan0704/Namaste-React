@@ -20,18 +20,18 @@ const Header = ()=>{
 
 const Card = (props) => {
 
-    const {name, rating, cuisine, Avgtime} = props;
+    const {data} = props;
 
     return(
         <div className='card'>
             <div className="card__image">
                 <img src="" alt="cardImage" />
             </div>
-            <div className='card__title'>{name}</div>
-            <div className="card__description">{cuisine}</div>
+            <div className='card__title'>{data.name}</div>
+            <div className="card__description">{data.cuisine}</div>
             <div className="card__deatils">
-                <div className='card__common card__ratings'>{rating}</div>
-                <div className="card__common card__time">{Avgtime} Minutes</div>
+                <div className='card__common card__ratings'>{data.rating}</div>
+                <div className="card__common card__time">{data.Avgtime} Minutes</div>
             </div>  
         </div>
     )
@@ -62,11 +62,9 @@ const Body = () =>{
         <div className='body'>
             <div className="search">Search</div>
             <div className="card__container">
-                <>
-                    <Card {...restaurantObj[0]}/>
-                    <Card {...restaurantObj[1]}/>
-                    <Card {...restaurantObj[2]}/>
-                </>
+                {
+                    restaurantObj.map((res) => <Card data={res}/>)
+                }
             </div>
         </div>
     )
