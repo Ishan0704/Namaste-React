@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 const Header = ()=>{
     return (
@@ -1741,7 +1741,7 @@ const Body = () =>{
             <div className="search">Search</div>
             <div className="card__container">
                 {
-                    restaurantList.map((res) => <Card Inner_data={res}/>)
+                    restaurantList.map((res) => <Card key={res.data.id} Inner_data={res}/>)
                 }
             </div>
         </div>
